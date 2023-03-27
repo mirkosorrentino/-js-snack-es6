@@ -9,25 +9,42 @@
 
 const teamsArray = [
     {
-        teamName,
-        points,
-        fouls
+        teamName: "Inter",
+        points: 0,
+        fouls: 0,
     },
     {
-        teamName,
-        points,
-        fouls
+        teamName: "Milan",
+        points: 0,
+        fouls: 0,
     },
     {
-        teamName,
-        points,
-        fouls
+        teamName: "Napoli",
+        points: 0,
+        fouls: 0,
     },
     {
-        teamName,
-        points,
-        fouls
+        teamName: "Benfica",
+        points: 0,
+        fouls: 0,
     },
 ]
 
-const teamName = prompt("Dimmi il nome di una squadra")
+teamsArray.forEach(element => {
+    element.points = getRndInteger(0, 40);
+    element.fouls = getRndInteger(0, 100);
+});
+
+const newTeams = teamsArray.map((teamName, fouls) => {
+    return {
+        teamName,
+        fouls
+    }
+})
+console.log(newTeams);
+
+// FUNCTIONS
+function getRndInteger (min, max) {
+    return Math.floor(Math.random() * (max - min + 1) - min);
+}
+
